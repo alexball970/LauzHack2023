@@ -1,3 +1,5 @@
 # LauzHack2023
 
-## this is the read me
+## EPFL Sustainability
+
+### Application to make voting simple and effortless
