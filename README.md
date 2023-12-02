@@ -1,5 +1,11 @@
 # LauzHack2023
 
-## this is the read me
+## Goal
+- Create a voting platform
+- Encourage students to 
 
-### Application to make voting simple and effortless
+## Implementation
+
+## Success Criteria
+
+
