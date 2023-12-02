@@ -1,0 +1,622 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FF483A1E2B1B733A009841CB /* EPFL_PollingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF483A1D2B1B733A009841CB /* EPFL_PollingApp.swift */; };
+		FF483A202B1B733A009841CB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF483A1F2B1B733A009841CB /* ContentView.swift */; };
+		FF483A222B1B733B009841CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF483A212B1B733B009841CB /* Assets.xcassets */; };
+		FF483A262B1B733B009841CB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF483A252B1B733B009841CB /* Preview Assets.xcassets */; };
+		FF483A302B1B733B009841CB /* EPFL_PollingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF483A2F2B1B733B009841CB /* EPFL_PollingTests.swift */; };
+		FF483A3A2B1B733B009841CB /* EPFL_PollingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF483A392B1B733B009841CB /* EPFL_PollingUITests.swift */; };
+		FF483A3C2B1B733B009841CB /* EPFL_PollingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF483A3B2B1B733B009841CB /* EPFL_PollingUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FF483A2C2B1B733B009841CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF483A122B1B733A009841CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF483A192B1B733A009841CB;
+			remoteInfo = "EPFL Polling";
+		};
+		FF483A362B1B733B009841CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FF483A122B1B733A009841CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FF483A192B1B733A009841CB;
+			remoteInfo = "EPFL Polling";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FF483A1A2B1B733A009841CB /* EPFL Polling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EPFL Polling.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF483A1D2B1B733A009841CB /* EPFL_PollingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPFL_PollingApp.swift; sourceTree = "<group>"; };
+		FF483A1F2B1B733A009841CB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FF483A212B1B733B009841CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FF483A232B1B733B009841CB /* EPFL_Polling.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EPFL_Polling.entitlements; sourceTree = "<group>"; };
+		FF483A252B1B733B009841CB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FF483A2B2B1B733B009841CB /* EPFL PollingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EPFL PollingTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF483A2F2B1B733B009841CB /* EPFL_PollingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPFL_PollingTests.swift; sourceTree = "<group>"; };
+		FF483A352B1B733B009841CB /* EPFL PollingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EPFL PollingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF483A392B1B733B009841CB /* EPFL_PollingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPFL_PollingUITests.swift; sourceTree = "<group>"; };
+		FF483A3B2B1B733B009841CB /* EPFL_PollingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPFL_PollingUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FF483A172B1B733A009841CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF483A282B1B733B009841CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF483A322B1B733B009841CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FF483A112B1B733A009841CB = {
+			isa = PBXGroup;
+			children = (
+				FF483A1C2B1B733A009841CB /* EPFL Polling */,
+				FF483A2E2B1B733B009841CB /* EPFL PollingTests */,
+				FF483A382B1B733B009841CB /* EPFL PollingUITests */,
+				FF483A1B2B1B733A009841CB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FF483A1B2B1B733A009841CB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FF483A1A2B1B733A009841CB /* EPFL Polling.app */,
+				FF483A2B2B1B733B009841CB /* EPFL PollingTests.xctest */,
+				FF483A352B1B733B009841CB /* EPFL PollingUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FF483A1C2B1B733A009841CB /* EPFL Polling */ = {
+			isa = PBXGroup;
+			children = (
+				FF483A1D2B1B733A009841CB /* EPFL_PollingApp.swift */,
+				FF483A1F2B1B733A009841CB /* ContentView.swift */,
+				FF483A212B1B733B009841CB /* Assets.xcassets */,
+				FF483A232B1B733B009841CB /* EPFL_Polling.entitlements */,
+				FF483A242B1B733B009841CB /* Preview Content */,
+			);
+			path = "EPFL Polling";
+			sourceTree = "<group>";
+		};
+		FF483A242B1B733B009841CB /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FF483A252B1B733B009841CB /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FF483A2E2B1B733B009841CB /* EPFL PollingTests */ = {
+			isa = PBXGroup;
+			children = (
+				FF483A2F2B1B733B009841CB /* EPFL_PollingTests.swift */,
+			);
+			path = "EPFL PollingTests";
+			sourceTree = "<group>";
+		};
+		FF483A382B1B733B009841CB /* EPFL PollingUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FF483A392B1B733B009841CB /* EPFL_PollingUITests.swift */,
+				FF483A3B2B1B733B009841CB /* EPFL_PollingUITestsLaunchTests.swift */,
+			);
+			path = "EPFL PollingUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FF483A192B1B733A009841CB /* EPFL Polling */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF483A3F2B1B733B009841CB /* Build configuration list for PBXNativeTarget "EPFL Polling" */;
+			buildPhases = (
+				FF483A162B1B733A009841CB /* Sources */,
+				FF483A172B1B733A009841CB /* Frameworks */,
+				FF483A182B1B733A009841CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "EPFL Polling";
+			productName = "EPFL Polling";
+			productReference = FF483A1A2B1B733A009841CB /* EPFL Polling.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FF483A2A2B1B733B009841CB /* EPFL PollingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF483A422B1B733B009841CB /* Build configuration list for PBXNativeTarget "EPFL PollingTests" */;
+			buildPhases = (
+				FF483A272B1B733B009841CB /* Sources */,
+				FF483A282B1B733B009841CB /* Frameworks */,
+				FF483A292B1B733B009841CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF483A2D2B1B733B009841CB /* PBXTargetDependency */,
+			);
+			name = "EPFL PollingTests";
+			productName = "EPFL PollingTests";
+			productReference = FF483A2B2B1B733B009841CB /* EPFL PollingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FF483A342B1B733B009841CB /* EPFL PollingUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF483A452B1B733B009841CB /* Build configuration list for PBXNativeTarget "EPFL PollingUITests" */;
+			buildPhases = (
+				FF483A312B1B733B009841CB /* Sources */,
+				FF483A322B1B733B009841CB /* Frameworks */,
+				FF483A332B1B733B009841CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF483A372B1B733B009841CB /* PBXTargetDependency */,
+			);
+			name = "EPFL PollingUITests";
+			productName = "EPFL PollingUITests";
+			productReference = FF483A352B1B733B009841CB /* EPFL PollingUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FF483A122B1B733A009841CB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					FF483A192B1B733A009841CB = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					FF483A2A2B1B733B009841CB = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = FF483A192B1B733A009841CB;
+					};
+					FF483A342B1B733B009841CB = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = FF483A192B1B733A009841CB;
+					};
+				};
+			};
+			buildConfigurationList = FF483A152B1B733A009841CB /* Build configuration list for PBXProject "EPFL Polling" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FF483A112B1B733A009841CB;
+			productRefGroup = FF483A1B2B1B733A009841CB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FF483A192B1B733A009841CB /* EPFL Polling */,
+				FF483A2A2B1B733B009841CB /* EPFL PollingTests */,
+				FF483A342B1B733B009841CB /* EPFL PollingUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FF483A182B1B733A009841CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF483A262B1B733B009841CB /* Preview Assets.xcassets in Resources */,
+				FF483A222B1B733B009841CB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF483A292B1B733B009841CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF483A332B1B733B009841CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FF483A162B1B733A009841CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF483A202B1B733A009841CB /* ContentView.swift in Sources */,
+				FF483A1E2B1B733A009841CB /* EPFL_PollingApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF483A272B1B733B009841CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF483A302B1B733B009841CB /* EPFL_PollingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF483A312B1B733B009841CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF483A3A2B1B733B009841CB /* EPFL_PollingUITests.swift in Sources */,
+				FF483A3C2B1B733B009841CB /* EPFL_PollingUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FF483A2D2B1B733B009841CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF483A192B1B733A009841CB /* EPFL Polling */;
+			targetProxy = FF483A2C2B1B733B009841CB /* PBXContainerItemProxy */;
+		};
+		FF483A372B1B733B009841CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FF483A192B1B733A009841CB /* EPFL Polling */;
+			targetProxy = FF483A362B1B733B009841CB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FF483A3D2B1B733B009841CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FF483A3E2B1B733B009841CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		FF483A402B1B733B009841CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "EPFL Polling/EPFL_Polling.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"EPFL Polling/Preview Content\"";
+				DEVELOPMENT_TEAM = 35C62283MV;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Lauzhack2023-AJA.EPFL-Polling";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FF483A412B1B733B009841CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "EPFL Polling/EPFL_Polling.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"EPFL Polling/Preview Content\"";
+				DEVELOPMENT_TEAM = 35C62283MV;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Lauzhack2023-AJA.EPFL-Polling";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FF483A432B1B733B009841CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35C62283MV;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Lauzhack2023-AJA.EPFL-PollingTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EPFL Polling.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EPFL Polling";
+			};
+			name = Debug;
+		};
+		FF483A442B1B733B009841CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35C62283MV;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Lauzhack2023-AJA.EPFL-PollingTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EPFL Polling.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EPFL Polling";
+			};
+			name = Release;
+		};
+		FF483A462B1B733B009841CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35C62283MV;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Lauzhack2023-AJA.EPFL-PollingUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "EPFL Polling";
+			};
+			name = Debug;
+		};
+		FF483A472B1B733B009841CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35C62283MV;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Lauzhack2023-AJA.EPFL-PollingUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "EPFL Polling";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FF483A152B1B733A009841CB /* Build configuration list for PBXProject "EPFL Polling" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF483A3D2B1B733B009841CB /* Debug */,
+				FF483A3E2B1B733B009841CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF483A3F2B1B733B009841CB /* Build configuration list for PBXNativeTarget "EPFL Polling" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF483A402B1B733B009841CB /* Debug */,
+				FF483A412B1B733B009841CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF483A422B1B733B009841CB /* Build configuration list for PBXNativeTarget "EPFL PollingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF483A432B1B733B009841CB /* Debug */,
+				FF483A442B1B733B009841CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF483A452B1B733B009841CB /* Build configuration list for PBXNativeTarget "EPFL PollingUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF483A462B1B733B009841CB /* Debug */,
+				FF483A472B1B733B009841CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FF483A122B1B733A009841CB /* Project object */;
+}
