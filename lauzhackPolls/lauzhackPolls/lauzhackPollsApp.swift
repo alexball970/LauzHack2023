@@ -18,9 +18,9 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         let settings = Firestore.firestore().settings
 
         // Uncomment this settings configuration to not use Local Emulator suite
-        settings.host = "127.0.0.1:8080"
-        settings.cacheSettings = MemoryCacheSettings()
-        settings.isSSLEnabled = false
+        // settings.host = "127.0.0.1:8080"
+        // settings.cacheSettings = MemoryCacheSettings()
+        // settings.isSSLEnabled = false
         Firestore.firestore().settings = settings
         return true
     }
