@@ -21,6 +21,7 @@
 		025F4A702B1BCDFE0078A6C5 /* PollChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025F4A6F2B1BCDFE0078A6C5 /* PollChartView.swift */; };
 		025F4A722B1BD0640078A6C5 /* PollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025F4A712B1BD0640078A6C5 /* PollView.swift */; };
 		025F4A742B1BD0AC0078A6C5 /* PollVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025F4A732B1BD0AC0078A6C5 /* PollVM.swift */; };
+		526D16152B1C256700C3B33B /* Forum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D16142B1C256700C3B33B /* Forum.swift */; };
 		FF483A5D2B1C2602009841CB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF483A5C2B1C2602009841CB /* LoginViewController.swift */; };
 		FF483A5F2B1C260D009841CB /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF483A5E2B1C260D009841CB /* RegisterViewController.swift */; };
 		FF483A612B1C261D009841CB /* PollsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF483A602B1C261D009841CB /* PollsViewController.swift */; };
@@ -61,6 +62,7 @@
 		025F4A732B1BD0AC0078A6C5 /* PollVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollVM.swift; sourceTree = "<group>"; };
 		025F4A7A2B1BD4A00078A6C5 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		025F4A7C2B1BD4A00078A6C5 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		526D16142B1C256700C3B33B /* Forum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forum.swift; sourceTree = "<group>"; };
 		FF483A5C2B1C2602009841CB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FF483A5E2B1C260D009841CB /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		FF483A602B1C261D009841CB /* PollsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollsViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			children = (
 				025F4A632B1BC8FF0078A6C5 /* Option.swift */,
 				025F4A652B1BC97C0078A6C5 /* Poll.swift */,
+				526D16142B1C256700C3B33B /* Forum.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				FF483A5D2B1C2602009841CB /* LoginViewController.swift in Sources */,
 				FF483A632B1C2A09009841CB /* ProfileViewController.swift in Sources */,
 				025F4A142B1B9BEE0078A6C5 /* lauzhackPollsApp.swift in Sources */,
+				526D16152B1C256700C3B33B /* Forum.swift in Sources */,
 				FF483A612B1C261D009841CB /* PollsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
