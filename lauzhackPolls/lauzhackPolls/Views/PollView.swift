@@ -106,7 +106,7 @@ struct PollView: View {
                             vm.incrementOption(option)
                         }, label: {
                             HStack {
-                                Text("+1")
+                                // Text("+1")
                                 Text(option.name)
                                 Spacer()
                                 Text(String(option.count))
