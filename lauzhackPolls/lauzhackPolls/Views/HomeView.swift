@@ -52,52 +52,58 @@ struct HomeView: View {
     }
 
     var livePollsSection: some View {
-        Section(header: Text("Latest Live Polls")) {
-            ForEach(vm.polls) { poll in
-                VStack {
-                    HStack(alignment: .top) {
-                        Text(poll.name)
-                        Spacer()
-                        Image(systemName: "chart.bar.xaxis")
-                        Text(String(poll.totalCount))
-                        if let updatedAt = poll.updatedAt {
-                            Image(systemName: "clock.fill")
-                            Text(updatedAt, style: .time)
+        Section{
+            DisclosureGroup("Latest Live Polls"){
+                ForEach(vm.polls) { poll in
+                    VStack {
+                        HStack(alignment: .top) {
+                            Text(poll.name)
+                            Spacer()
+                            Image(systemName: "chart.bar.xaxis")
+                            Text(String(poll.totalCount))
+                            if let updatedAt = poll.updatedAt {
+                                Image(systemName: "clock.fill")
+                                Text(updatedAt, style: .time)
+                            }
                         }
+                        PollChartView(options: poll.options)
+                            .frame(height: 160)
                     }
-                    PollChartView(options: poll.options)
-                        .frame(height: 160)
+                    .padding(.vertical)
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        vm.modalPollId = poll.id
+                    }
                 }
-                .padding(.vertical)
-                .contentShape(Rectangle())
-                .onTapGesture {
-                    vm.modalPollId = poll.id
-                }
+            
             }
         }
     }
 
     var myPollsSection: some View {
-        Section(header: Text("My Polls")) {
-            ForEach(vm.polls) { poll in
-                VStack {
-                    HStack(alignment: .top) {
-                        Text(poll.name)
-                        Spacer()
-                        let highestCountOption = poll.options.max(by: { $0.count < $1.count })
+        Section{
+            DisclosureGroup("My Polls"){
+                ForEach(vm.polls) { poll in
+                    VStack {
+                        HStack(alignment: .top) {
+                            Text(poll.name)
+                            Spacer()
+                            let highestCountOption = poll.options.max(by: { $0.count < $1.count })
 
-                        if let highestCountOption = highestCountOption {
-                            Text("Winner: \(highestCountOption.name)")
-                        } else {
-                            Text("No options available")
+                            if let highestCountOption = highestCountOption {
+                                Text("Winner: \(highestCountOption.name)")
+                            } else {
+                                Text("No options available")
+                            }
                         }
                     }
+                    .padding(.vertical)
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        vm.modalPollId = poll.id
+                    }
                 }
-                .padding(.vertical)
-                .contentShape(Rectangle())
-                .onTapGesture {
-                    vm.modalPollId = poll.id
-                }
+            
             }
         }
     }
