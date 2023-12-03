@@ -10,7 +10,7 @@ import SwiftUI
 import FirebaseFirestore
 
 class PollViewModel0: ObservableObject {
-    // ... other properties and methods
+    // ... other properrties and methods
     
     @Published var comments: String = "" // Store fetched comments
     
