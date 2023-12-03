@@ -86,12 +86,29 @@ struct PollView: View {
                     }
                 }
                 Section("Forum") {
-                    VStack(alignment: .leading) {
-                        Text("Current Forum")
-                        //Text(vm.pollId) //change to text from database
-                        Text("insérer bouton")
-                            .font(.caption)
-                            .textSelection(.enabled)
+                    VStack {
+                        if Answer.count != 0{
+                            Text(Answer)
+                        }
+                        // Text(Answer)
+                        ZStack{
+                            TextEditor(text: $promttf)
+                                .font(.body)
+                                .cornerRadius(10)
+                                .frame(height: 0)
+    //                        if promttf1.count == 0{
+    //                            Text("").foregroundColor(.gray)
+    //                        }
+                        }
+                        Button(action:{
+                            Answer = theopenaiclass.processPrompt(prompt: "Generate a comprehensive and detailed summary that captures the key points of the debate/conversation on the forum . Highlight the main arguments, counterarguments, and diverse perspectives presented by the participants. Consider the nuances and varied opinions expressed in the discussion to provide an informative and balanced summary: \(promttf1)")!
+                        }){
+                            Label("Generate AI Summary", systemImage: "chart.bar.fill")
+                                                .padding()
+                                                .foregroundColor(.white)
+                                                .background(Color.blue)
+                                                .cornerRadius(8)
+                        }
                     }
                 Section {
                     TextField("Enter comment", text: $commentInput)
@@ -106,30 +123,7 @@ struct PollView: View {
                     }
                     
                 }
-                VStack {
-                    if Answer.count != 0{
-                        Text(Answer)
-                    }
-                    // Text(Answer)
-                    ZStack{
-                        TextEditor(text: $promttf)
-                            .font(.body)
-                            .cornerRadius(10)
-                            .frame(height: 0)
-//                        if promttf1.count == 0{
-//                            Text("").foregroundColor(.gray)
-//                        }
-                    }
-                    Button(action:{
-                        Answer = theopenaiclass.processPrompt(prompt: "Generate a comprehensive and detailed summary that captures the key points of the debate/conversation on the forum . Highlight the main arguments, counterarguments, and diverse perspectives presented by the participants. Consider the nuances and varied opinions expressed in the discussion to provide an informative and balanced summary: \(promttf1)")!
-                    }){
-                        Label("Generate AI Summary", systemImage: "chart.bar.fill")
-                                            .padding()
-                                            .foregroundColor(.white)
-                                            .background(Color.blue)
-                                            .cornerRadius(8)
-                    }
-                }
+                
             }
         }
         .navigationTitle(vm.poll?.name ?? "")
