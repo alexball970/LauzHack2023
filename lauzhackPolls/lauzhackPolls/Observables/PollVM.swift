@@ -93,7 +93,16 @@ class PollViewModel {
                             self.newComment = ""
                         }
                     }
-                }
+                } else {
+                    let forum = Forum(id: self.pollId, content: self.newComment)
+                          
+                    do {
+                        try self.db.document("comments/\(self.pollId)").setData(from: forum)
+                        self.newComment = ""
+                    } catch {
+                        self.error = error.localizedDescription
+                                }
+                    }
             }
         }
     }
