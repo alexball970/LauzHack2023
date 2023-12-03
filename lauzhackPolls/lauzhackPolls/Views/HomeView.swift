@@ -16,6 +16,7 @@ struct HomeView: View {
         List {
             existingPollSection
             livePollsSection
+            myPollsSection
             createPollsSection
             addOptionsSection
         }
@@ -30,7 +31,7 @@ struct HomeView: View {
                 PollView(vm: .init(pollId: id))
             }
         }
-        .navigationTitle("XCA LivePolls")
+        .navigationTitle("EPFL Polls")
         .onAppear {
             vm.listenToLivePolls()
         }
@@ -66,6 +67,44 @@ struct HomeView: View {
                         }
                         PollChartView(options: poll.options)
                             .frame(height: 160)
+                    }
+                    .padding(.vertical)
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        vm.modalPollId = poll.id
+                    }
+                }
+            }
+            
+        }
+    }
+    
+    var myPollsSection: some View {
+        Section {
+            DisclosureGroup("My Polls") {
+                ForEach(vm.polls) { poll in
+                    VStack {
+                        HStack(alignment: .top) {
+                            Text(poll.name)
+                            Spacer()
+                            //Image(systemName: "chart.bar.xaxis")
+                            /*
+                            Text(String(poll.totalCount))
+                            if let updatedAt = poll.updatedAt {
+                                Image(systemName: "clock.fill")
+                                Text(updatedAt, style: .time)
+                            }
+                             */
+                            let highestCountOption = poll.options.max(by: { $0.count < $1.count })
+
+                                    if let highestCountOption = highestCountOption {
+                                        Text("Winner: \(highestCountOption.name)")
+                                    } else {
+                                        Text("No options available")
+                                    }
+                        }
+                        
+                        //ForumView
                     }
                     .padding(.vertical)
                     .contentShape(Rectangle())
