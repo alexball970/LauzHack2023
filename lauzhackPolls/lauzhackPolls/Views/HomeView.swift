@@ -9,9 +9,8 @@
 import SwiftUI
 
 struct HomeView: View {
-    
     @Bindable var vm = HomeViewModel()
-    
+
     var body: some View {
         List {
             existingPollSection
@@ -36,120 +35,107 @@ struct HomeView: View {
             vm.listenToLivePolls()
         }
     }
-    
+
     var existingPollSection: some View {
-        Section {
-            DisclosureGroup("Join a Poll") {
+        Section(header: Text("")) {
+            DisclosureGroup {
                 TextField("Enter poll id", text: $vm.existingPollId)
                     .autocorrectionDisabled()
                     .textInputAutocapitalization(.never)
                 Button("Join") {
                     Task { await vm.joinExistingPoll() }
                 }
+            } label: {
+                Label("Join a Poll", systemImage: "link")
             }
         }
     }
-    
-    var livePollsSection: some View {
-        Section {
-            DisclosureGroup("Latest Live Polls") {
-                ForEach(vm.polls) { poll in
-                    VStack {
-                        HStack(alignment: .top) {
-                            Text(poll.name)
-                            Spacer()
-                            Image(systemName: "chart.bar.xaxis")
-                            Text(String(poll.totalCount))
-                            if let updatedAt = poll.updatedAt {
-                                Image(systemName: "clock.fill")
-                                Text(updatedAt, style: .time)
-                            }
-                        }
-                        PollChartView(options: poll.options)
-                            .frame(height: 160)
-                    }
-                    .padding(.vertical)
-                    .contentShape(Rectangle())
-                    .onTapGesture {
-                        vm.modalPollId = poll.id
-                    }
-                }
-            }
-            
-        }
-    }
-    
-    var myPollsSection: some View {
-        Section {
-            DisclosureGroup("My Polls") {
-                ForEach(vm.polls) { poll in
-                    VStack {
-                        HStack(alignment: .top) {
-                            Text(poll.name)
-                            Spacer()
-                            //Image(systemName: "chart.bar.xaxis")
-                            /*
-                            Text(String(poll.totalCount))
-                            if let updatedAt = poll.updatedAt {
-                                Image(systemName: "clock.fill")
-                                Text(updatedAt, style: .time)
-                            }
-                             */
-                            let highestCountOption = poll.options.max(by: { $0.count < $1.count })
 
-                                    if let highestCountOption = highestCountOption {
-                                        Text("Winner: \(highestCountOption.name)")
-                                    } else {
-                                        Text("No options available")
-                                    }
+    var livePollsSection: some View {
+        Section(header: Text("Latest Live Polls")) {
+            ForEach(vm.polls) { poll in
+                VStack {
+                    HStack(alignment: .top) {
+                        Text(poll.name)
+                        Spacer()
+                        Image(systemName: "chart.bar.xaxis")
+                        Text(String(poll.totalCount))
+                        if let updatedAt = poll.updatedAt {
+                            Image(systemName: "clock.fill")
+                            Text(updatedAt, style: .time)
                         }
-                        
-                        //ForumView
                     }
-                    .padding(.vertical)
-                    .contentShape(Rectangle())
-                    .onTapGesture {
-                        vm.modalPollId = poll.id
-                    }
+                    PollChartView(options: poll.options)
+                        .frame(height: 160)
+                }
+                .padding(.vertical)
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    vm.modalPollId = poll.id
                 }
             }
-            
         }
     }
-    
+
+    var myPollsSection: some View {
+        Section(header: Text("My Polls")) {
+            ForEach(vm.polls) { poll in
+                VStack {
+                    HStack(alignment: .top) {
+                        Text(poll.name)
+                        Spacer()
+                        let highestCountOption = poll.options.max(by: { $0.count < $1.count })
+
+                        if let highestCountOption = highestCountOption {
+                            Text("Winner: \(highestCountOption.name)")
+                        } else {
+                            Text("No options available")
+                        }
+                    }
+                }
+                .padding(.vertical)
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    vm.modalPollId = poll.id
+                }
+            }
+        }
+    }
+
     var createPollsSection: some View {
-        Section {
+        Section(header: Text("Create a Poll"), footer: Text("Enter poll name & add 2-4 options to submit")) {
             TextField("Enter poll name", text: $vm.newPollName, axis: .vertical)
                 .autocorrectionDisabled()
                 .textInputAutocapitalization(.never)
-            
+
             Button("Submit") {
                 Task { await vm.createNewPoll() }
-            }.disabled(vm.isCreateNewPollButtonDisabled)
-            
+            }
+            .disabled(vm.isCreateNewPollButtonDisabled)
+            .padding(.vertical)
+
             if vm.isLoading {
                 ProgressView()
             }
-        } header: {
-            Text("Create a Poll")
-        } footer: {
-            Text("Enter poll name & add 2-4 options to submit")
         }
     }
-    
+
     var addOptionsSection: some View {
-        Section("Options") {
+        Section(header: Text("Options")) {
             TextField("Enter option name", text: $vm.newOptionName)
                 .autocorrectionDisabled()
                 .textInputAutocapitalization(.never)
-            
+
             Button("+ Add Option") {
                 vm.addOption()
-            }.disabled(vm.isAddOptionsButtonDisabled)
-            
-            ForEach(vm.newPollOptions) {
-                Text($0)
-            }.onDelete { indexSet in
+            }
+            .disabled(vm.isAddOptionsButtonDisabled)
+            .padding(.vertical)
+
+            ForEach(vm.newPollOptions, id: \.self) { option in
+                Text(option)
+            }
+            .onDelete { indexSet in
                 vm.newPollOptions.remove(atOffsets: indexSet)
             }
         }
@@ -165,3 +151,5 @@ extension String: Identifiable {
         HomeView()
     }
 }
+
+
