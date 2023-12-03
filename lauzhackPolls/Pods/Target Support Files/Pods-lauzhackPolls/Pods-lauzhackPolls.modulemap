@@ -1,0 +1,6 @@
+framework module Pods_lauzhackPolls {
+  umbrella header "Pods-lauzhackPolls-umbrella.h"
+
+  export *
+  module * { export * }
+}
