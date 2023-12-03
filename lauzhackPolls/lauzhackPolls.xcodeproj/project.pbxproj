@@ -21,6 +21,14 @@
 		025F4A702B1BCDFE0078A6C5 /* PollChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025F4A6F2B1BCDFE0078A6C5 /* PollChartView.swift */; };
 		025F4A722B1BD0640078A6C5 /* PollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025F4A712B1BD0640078A6C5 /* PollView.swift */; };
 		025F4A742B1BD0AC0078A6C5 /* PollVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025F4A732B1BD0AC0078A6C5 /* PollVM.swift */; };
+		FF483A5D2B1C2602009841CB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF483A5C2B1C2602009841CB /* LoginViewController.swift */; };
+		FF483A5F2B1C260D009841CB /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF483A5E2B1C260D009841CB /* RegisterViewController.swift */; };
+		FF483A612B1C261D009841CB /* PollsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF483A602B1C261D009841CB /* PollsViewController.swift */; };
+		FF483A632B1C2A09009841CB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF483A622B1C2A09009841CB /* ProfileViewController.swift */; };
+		FF483A652B1C2A1F009841CB /* NewPollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF483A642B1C2A1F009841CB /* NewPollViewController.swift */; };
+		FF483A682B1C2A84009841CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF483A672B1C2A84009841CB /* Main.storyboard */; };
+		FF483A6A2B1C2A96009841CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF483A692B1C2A96009841CB /* LaunchScreen.storyboard */; };
+		FF483A6D2B1C2EA1009841CB /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF483A6C2B1C2EA1009841CB /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -53,6 +61,14 @@
 		025F4A732B1BD0AC0078A6C5 /* PollVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollVM.swift; sourceTree = "<group>"; };
 		025F4A7A2B1BD4A00078A6C5 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		025F4A7C2B1BD4A00078A6C5 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		FF483A5C2B1C2602009841CB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FF483A5E2B1C260D009841CB /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		FF483A602B1C261D009841CB /* PollsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollsViewController.swift; sourceTree = "<group>"; };
+		FF483A622B1C2A09009841CB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		FF483A642B1C2A1F009841CB /* NewPollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPollViewController.swift; sourceTree = "<group>"; };
+		FF483A672B1C2A84009841CB /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		FF483A692B1C2A96009841CB /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FF483A6C2B1C2EA1009841CB /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +104,8 @@
 		025F4A122B1B9BEE0078A6C5 /* lauzhackPolls */ = {
 			isa = PBXGroup;
 			children = (
+				FF483A6B2B1C2E78009841CB /* Resources */,
+				FF483A5A2B1C25EA009841CB /* Controllers */,
 				025F4A6B2B1BCC700078A6C5 /* Observables */,
 				025F4A672B1BCC1F0078A6C5 /* Views */,
 				025F4A622B1BC8DC0078A6C5 /* Models */,
@@ -130,6 +148,7 @@
 		025F4A672B1BCC1F0078A6C5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FF483A662B1C2A60009841CB /* Storyboards */,
 				025F4A682B1BCC4C0078A6C5 /* HomeView.swift */,
 				025F4A6F2B1BCDFE0078A6C5 /* PollChartView.swift */,
 				025F4A712B1BD0640078A6C5 /* PollView.swift */,
@@ -144,6 +163,43 @@
 				025F4A732B1BD0AC0078A6C5 /* PollVM.swift */,
 			);
 			path = Observables;
+			sourceTree = "<group>";
+		};
+		FF483A5A2B1C25EA009841CB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FF483A5B2B1C25F2009841CB /* Login */,
+				FF483A602B1C261D009841CB /* PollsViewController.swift */,
+				FF483A622B1C2A09009841CB /* ProfileViewController.swift */,
+				FF483A642B1C2A1F009841CB /* NewPollViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FF483A5B2B1C25F2009841CB /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FF483A5C2B1C2602009841CB /* LoginViewController.swift */,
+				FF483A5E2B1C260D009841CB /* RegisterViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		FF483A662B1C2A60009841CB /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FF483A672B1C2A84009841CB /* Main.storyboard */,
+				FF483A692B1C2A96009841CB /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FF483A6B2B1C2E78009841CB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FF483A6C2B1C2EA1009841CB /* Extensions.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +271,8 @@
 				025F4A1B2B1B9BF20078A6C5 /* Preview Assets.xcassets in Resources */,
 				025F4A252B1B9D640078A6C5 /* GoogleService-Info.plist in Resources */,
 				025F4A182B1B9BF20078A6C5 /* Assets.xcassets in Resources */,
+				FF483A6A2B1C2A96009841CB /* LaunchScreen.storyboard in Resources */,
+				FF483A682B1C2A84009841CB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,14 +284,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				025F4A662B1BC97C0078A6C5 /* Poll.swift in Sources */,
+				FF483A5F2B1C260D009841CB /* RegisterViewController.swift in Sources */,
 				025F4A162B1B9BEE0078A6C5 /* ContentView.swift in Sources */,
 				025F4A742B1BD0AC0078A6C5 /* PollVM.swift in Sources */,
+				FF483A652B1C2A1F009841CB /* NewPollViewController.swift in Sources */,
 				025F4A642B1BC8FF0078A6C5 /* Option.swift in Sources */,
 				025F4A722B1BD0640078A6C5 /* PollView.swift in Sources */,
 				025F4A6D2B1BCC900078A6C5 /* HomeVM.swift in Sources */,
 				025F4A702B1BCDFE0078A6C5 /* PollChartView.swift in Sources */,
 				025F4A692B1BCC4C0078A6C5 /* HomeView.swift in Sources */,
+				FF483A6D2B1C2EA1009841CB /* Extensions.swift in Sources */,
+				FF483A5D2B1C2602009841CB /* LoginViewController.swift in Sources */,
+				FF483A632B1C2A09009841CB /* ProfileViewController.swift in Sources */,
 				025F4A142B1B9BEE0078A6C5 /* lauzhackPollsApp.swift in Sources */,
+				FF483A612B1C261D009841CB /* PollsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +438,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -405,6 +470,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
