@@ -82,7 +82,7 @@ class PollViewModel {
                 
                 if let data = documentSnapshot?.data(), var content = data["content"] as? String {
                     // Append a new comment with a newline character
-                    content += "\n" + self.newComment
+                    content += "\n" + "- " +  self.newComment
                     
                     // Update the Firestore document with the modified content
                     documentRef.setData(["content": content], merge: true) { error in

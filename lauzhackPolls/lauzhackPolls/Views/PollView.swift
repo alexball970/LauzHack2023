@@ -130,14 +130,24 @@ struct PollView: View {
                             //                        }
                         }
                         Button(action:{
-                            Answer = theopenaiclass.processPrompt(prompt: "Generate a comprehensive and detailed summary that captures the key points of the debate/conversation on the forum . Highlight the main arguments, counterarguments, and diverse perspectives presented by the participants. Consider the nuances and varied opinions expressed in the discussion to provide an informative and balanced summary: \(comments)")!
-                        }){
-                            Label("Generate AI Summary", systemImage: "chart.bar.fill")
-                                .padding()
-                                .foregroundColor(.white)
-                                .background(Color.blue)
-                                .cornerRadius(8)
-                        }
+
+
+
+
+                                                    Answer = theopenaiclass.processPrompt(prompt: "Generate a summary that captures the key points of this conversation and that captures what the majority of people are saying: \(vm0.comments)")!
+
+
+
+
+
+
+                                                }){
+                                                    Label("Generate AI Summary", systemImage: "chart.bar.fill")
+                                                        .padding()
+                                                        .foregroundColor(.white)
+                                                        .background(Color.blue)
+                                                        .cornerRadius(8)
+                                                }
                     }
                 }
                     Section {
