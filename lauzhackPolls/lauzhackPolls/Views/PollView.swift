@@ -7,10 +7,39 @@
 
 
 import SwiftUI
+import FirebaseFirestore
+
+class PollViewModel0: ObservableObject {
+    // ... other properties and methods
+    
+    @Published var comments: String = "" // Store fetched comments
+    
+    func fetchComments(for pollId: String) {
+        let db = Firestore.firestore()
+        let documentRef = db.document("comments/\(pollId)")
+        documentRef.getDocument { documentSnapshot, error in
+            if let error = error {
+                // Handle error
+                print("Error fetching comments: \(error.localizedDescription)")
+                return
+            }
+            
+            if let data = documentSnapshot?.data(), let content = data["content"] as? String {
+                // Update comments when data is fetched
+                DispatchQueue.main.async {
+                    self.comments = content
+                }
+            }
+        }
+    }
+}
 
 struct PollView: View {
-    
+    let db = Firestore.firestore()
     var vm: PollViewModel
+    var error: String? = nil
+    var comments = [String]()
+    @StateObject var vm0 = PollViewModel0()
     @State private var commentInput: String = ""
     @State var promttf1 = """
         user: Hi there! How are you today?
@@ -84,7 +113,7 @@ struct PollView: View {
                             }
                         })
                     }
-                }
+                
                 Section("Forum") {
                     VStack {
                         if Answer.count != 0{
@@ -96,30 +125,44 @@ struct PollView: View {
                                 .font(.body)
                                 .cornerRadius(10)
                                 .frame(height: 0)
-    //                        if promttf1.count == 0{
-    //                            Text("").foregroundColor(.gray)
-    //                        }
+                            //                        if promttf1.count == 0{
+                            //                            Text("").foregroundColor(.gray)
+                            //                        }
                         }
                         Button(action:{
                             Answer = theopenaiclass.processPrompt(prompt: "Generate a comprehensive and detailed summary that captures the key points of the debate/conversation on the forum . Highlight the main arguments, counterarguments, and diverse perspectives presented by the participants. Consider the nuances and varied opinions expressed in the discussion to provide an informative and balanced summary: \(promttf1)")!
                         }){
                             Label("Generate AI Summary", systemImage: "chart.bar.fill")
-                                                .padding()
-                                                .foregroundColor(.white)
-                                                .background(Color.blue)
-                                                .cornerRadius(8)
+                                .padding()
+                                .foregroundColor(.white)
+                                .background(Color.blue)
+                                .cornerRadius(8)
                         }
                     }
+                }
+                    Section {
+                                    VStack(alignment: .leading) {
+                                        Text("Log")
+                                        Text(vm0.comments)
+                                            .font(.caption)
+                                            .textSelection(.enabled)
+                                    }
+                                    .onAppear {
+                                        vm0.fetchComments(for: vm.pollId) // Fetch comments when the view appears
+                                    }
+                                }
                 Section {
                     TextField("Enter comment", text: $commentInput)
                         .autocorrectionDisabled()
                         .textInputAutocapitalization(.never)
                         
                     Button("Submit") {
-                        vm.newComment = commentInput // Assigning the comment to view model property
+                        vm.newComment = commentInput
+                        commentInput = ""
+                        // Assigning the comment to view model property
                         Task { await vm.createNewComment() }
                         }
-                         
+                        
                     }
                     
                 }
