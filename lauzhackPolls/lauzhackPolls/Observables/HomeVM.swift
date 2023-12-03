@@ -23,7 +23,10 @@ class HomeViewModel {
     var error: String? = nil
     var newPollName: String = ""
     var newOptionName: String = ""
+   
     var newPollOptions: [String] = []
+    
+    var newComment: String = ""
     
     var isLoading = false
     var isCreateNewPollButtonDisabled: Bool {
@@ -82,6 +85,8 @@ class HomeViewModel {
         }
     }
     
+
+    
     func addOption() {
         self.newPollOptions.append(newOptionName.trimmingCharacters(in: .whitespacesAndNewlines))
         self.newOptionName = ""
@@ -100,3 +105,4 @@ class HomeViewModel {
     }
     
 }
+

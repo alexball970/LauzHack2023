@@ -19,6 +19,9 @@ class PollViewModel {
     let pollId: String
     
     var poll: Poll? = nil
+    var comments = [String]()
+    var newComment: String = ""
+    var error: String? = nil
     
     
     //var activity: Activity<LivePollsWidgetAttributes>? = nil
@@ -58,40 +61,60 @@ class PollViewModel {
             }
         
     }
-    /*
-    func startActivityIfNeeded() {
-        guard let poll = self.poll, activity == nil, ActivityAuthorizationInfo().frequentPushesEnabled else { return }
-        if let currentPollIdActivity = Activity<LivePollsWidgetAttributes>.activities.first(where: { activity in activity.attributes.pollId == pollId }) {
-            self.activity = currentPollIdActivity
-        } else {
-            do {
-                let activityAttributes = LivePollsWidgetAttributes(pollId: pollId)
-                let activityContent = ActivityContent(state: poll, staleDate: Calendar.current.date(byAdding: .hour, value: 8, to: Date())!)
-                activity = try Activity.request(attributes: activityAttributes, content: activityContent, pushType: .token)
-                print("Requested a live activity \(String(describing: activity?.id))")
-            } catch {
-                print("Error requesting live activity \(error.localizedDescription)")
-            }
-        }
+    
+    @MainActor
+    func createNewComment() async {
+        //isLoading = true
+        //defer { isLoading = false }
         
-        let deviceId = UIDevice.current.identifierForVendor?.uuidString ?? UUID().uuidString
-        Task {
-            guard let activity else { return }
-            for try await token in activity.pushTokenUpdates {
-                let tokenParts = token.map { data in String(format: "%02.2hhx", data) }
-                let token = tokenParts.joined()
-                print("Live activity token updated: \(token)")
+        
+        //append comment after get
+        
+        //(id: String = UUID().uuidString, createdAt: Date? = nil, updatedAt: Date? = nil, title: String, content: String)
+        do {
+            let documentRef = db.document("comments/\(pollId)")
+            
+            documentRef.getDocument { documentSnapshot, error in
+                if let error = error {
+                    self.error = error.localizedDescription
+                    return
+                }
                 
-                do {
-                    try await db.collection("polls/\(pollId)/push_tokens")
-                        .document(deviceId)
-                        .setData([ "token": token ])
-                } catch {
-                    print("failed to update token: \(error.localizedDescription)")
+                if let data = documentSnapshot?.data(), var content = data["content"] as? String {
+                    // Append a new comment with a newline character
+                    content += "\n" + self.newComment
+                    
+                    // Update the Firestore document with the modified content
+                    documentRef.setData(["content": content], merge: true) { error in
+                        if let error = error {
+                            self.error = error.localizedDescription
+                        } else {
+                            // Clear the new comment after it's been added
+                            self.newComment = ""
+                        }
+                    }
                 }
             }
         }
     }
-     */
+}
+    
+
+        /*
+        do {
+            let data = db.get((pollId),db.document("comments/").getDocument())
+            data += newComment + "\n"
+            let forum = Forum(content: (data))
+            try db.document("comments/\(pollId)").setData(from: forum)
+            //try db.document("polls/\(poll.id)").setData(from: poll)
+            self.newComment = ""
+        } catch {
+            self.error = error.localizedDescription
+        }
+    }
+     
+    
     
 }
+*/
+

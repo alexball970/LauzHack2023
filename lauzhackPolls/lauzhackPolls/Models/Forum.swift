@@ -14,9 +14,16 @@ struct Forum: Codable, Identifiable, Hashable {
     @ServerTimestamp var createdAt: Date?
     @ServerTimestamp var updatedAt: Date?
     
-    var title: String
+    //var title: String
     var content: String
     
+    init(id: String = UUID().uuidString, content: String) {
+        
+        self.content = content
+        self.id = id
+    }
+    
+    /*
     init(id: String = UUID().uuidString, createdAt: Date? = nil, updatedAt: Date? = nil, title: String, content: String) {
         self.id = id
         self.createdAt = createdAt
@@ -24,6 +31,8 @@ struct Forum: Codable, Identifiable, Hashable {
         self.title = title
         self.content = content
     }
+     */
 }
+
 
 
