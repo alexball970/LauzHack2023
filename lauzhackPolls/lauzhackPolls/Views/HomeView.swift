@@ -7,9 +7,16 @@
 
 
 import SwiftUI
+import AVFoundation
+import UIKit
 
 struct HomeView: View {
     @Bindable var vm = HomeViewModel()
+    
+    @State private var isScannerActive = false
+    @State private var scannedCode: String? = nil
+    
+    @State private var pollInput: String = ""
 
     var body: some View {
         List {
@@ -32,18 +39,25 @@ struct HomeView: View {
         }
         .navigationTitle("EPFL Polls")
         .onAppear {
+            
             vm.listenToLivePolls()
+        }
+        .onOpenURL { url in
+                vm.handleURLScheme(url)
         }
     }
 
     var existingPollSection: some View {
         Section(header: Text("")) {
             DisclosureGroup {
-                TextField("Enter poll id", text: $vm.existingPollId)
+                TextField("Enter poll id", text: $pollInput)
                     .autocorrectionDisabled()
                     .textInputAutocapitalization(.never)
                 Button("Join") {
+                    vm.existingPollId = pollInput
+                    pollInput = ""
                     Task { await vm.joinExistingPoll() }
+                    
                 }
             } label: {
                 Label("Join a Poll", systemImage: "link")

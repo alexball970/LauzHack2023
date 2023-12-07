@@ -8,6 +8,8 @@
 
 import SwiftUI
 import FirebaseFirestore
+import CoreImage.CIFilterBuiltins
+
 
 class PollViewModel0: ObservableObject {
     // ... other properrties and methods
@@ -34,36 +36,41 @@ class PollViewModel0: ObservableObject {
     }
 }
 
+
+
+
+
 struct PollView: View {
+    
     let db = Firestore.firestore()
     var vm: PollViewModel
     var error: String? = nil
     var comments = [String]()
     @StateObject var vm0 = PollViewModel0()
     @State private var commentInput: String = ""
-    @State var promttf1 = """
-        user: Hi there! How are you today?
-        assistant: I'm doing well, thank you! How about you?
-        user: Oh, I'm doing fine, just a bit tired. By the way, did you catch the latest movie that was released?
-        assistant: No, I haven't had the chance to watch it yet. What's the movie about?
-        user: Well, it's a sci-fi thriller with a twist ending. John, my friend, recommended it to me.
-        assistant: That sounds interesting! I'll have to check it out. Speaking of John, how is he doing these days?
-        user: John is doing great. He recently got a promotion at work. He's excited about the new responsibilities.
-        assistant: That's fantastic news! Please pass along my congratulations to him. By the way, have you made any exciting plans for the weekend?
-        user: Not yet, but Sarah and I are thinking of going hiking. Sarah loves the outdoors, and it's been a while since we had a nature getaway.
-        assistant: Hiking sounds like a wonderful idea. I'm sure you'll have a fantastic time. What's Sarah's favorite hiking spot?
-        user: Sarah loves the trails in the national park. The scenery is breathtaking, especially during this time of the year when the leaves are changing colors.
-        assistant: The national park is a beautiful choice. Make sure to take some photos to capture the autumn colors. By the way, did you hear about the new cafe that opened downtown?
-        user: Yes, I did! Emily, my sister, visited it last week and said their pastries are amazing. We're planning to check it out this weekend after our hike.
-        assistant: That sounds like a delightful plan! I hope the pastries live up to the hype. If you discover any hidden gems, let me know!
-        user: Absolutely! Will do. So, what have you been up to lately?
-        assistant: Well, I've been assisting users with various queries and learning from our conversations. It's always interesting to engage in diverse discussions.
-        """
     @State var promttf = ""
     @State var Answer = ""
     @State var degrees = 0.0
     let theopenaiclass = OpenAIConnector()
     
+    @State private var isQRCodeSheetPresented = false
+    @State private var generatedQRCode: UIImage? = nil
+    
+    let filter = CIFilter.qrCodeGenerator()
+    let context = CIContext()
+    
+    func generateQRCode(_ pollId : String) -> UIImage {
+        let customScheme = "QRscan" // Replace with your app's custom scheme
+        let urlString = "\(customScheme)://poll/\(pollId)"
+        let data = Data(urlString.utf8)
+        filter.setValue(data , forKey: "inputMessage")
+        if let qrCodeImage = filter.outputImage {
+            if let qrCodeCGImage = context.createCGImage(qrCodeImage, from: qrCodeImage.extent) {
+                return UIImage(cgImage: qrCodeCGImage)
+            }
+        }
+        return UIImage(systemName: "xmark") ?? UIImage()
+    }
     
     var body: some View {
         List {
@@ -92,6 +99,7 @@ struct PollView: View {
                 }
                 
             }
+            
             
             if let options = vm.poll?.options {
                 Section {
@@ -131,23 +139,15 @@ struct PollView: View {
                         }
                         Button(action:{
 
+                                            Answer = theopenaiclass.processPrompt(prompt: "Generate a summary that captures the key points of this conversation and that captures what the majority of people are saying: \(vm0.comments)")!
 
-
-
-                                                    Answer = theopenaiclass.processPrompt(prompt: "Generate a summary that captures the key points of this conversation and that captures what the majority of people are saying: \(vm0.comments)")!
-
-
-
-
-
-
-                                                }){
-                                                    Label("Generate AI Summary", systemImage: "chart.bar.fill")
-                                                        .padding()
-                                                        .foregroundColor(.white)
-                                                        .background(Color.blue)
-                                                        .cornerRadius(8)
-                                                }
+                                        }){
+                                            Label("Generate AI Summary", systemImage: "chart.bar.fill")
+                                                .padding()
+                                                .foregroundColor(.white)
+                                                .background(Color.blue)
+                                                .cornerRadius(8)
+                                        }
                     }
                 }
                     Section {
@@ -175,6 +175,23 @@ struct PollView: View {
                         
                     }
                     
+                    
+                }
+                Section {
+                    DisclosureGroup("QR Code"){
+                        VStack {
+                            Spacer()
+                            Image(uiImage: generateQRCode(vm.pollId))
+                                .interpolation(.none)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .padding()
+                                .background(Color.white)
+                                .cornerRadius(10)
+                                .padding()
+                            Spacer()
+                        }
+                    }
                 }
                 
             }
@@ -196,7 +213,7 @@ struct ContentView_Previews: PreviewProvider {
 public class OpenAIConnector {
     let openAIURL = URL(string: "https://api.openai.com/v1/engines/text-davinci-002/completions")
     var openAIKey: String {
-        return "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"
+        return "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"
     }
     
     private func executeRequest(request: URLRequest, withSessionConfig sessionConfig: URLSessionConfiguration?) -> Data? {

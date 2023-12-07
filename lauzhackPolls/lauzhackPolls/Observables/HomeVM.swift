@@ -68,6 +68,21 @@ class HomeViewModel {
     }
     
     @MainActor
+    func handleURLScheme(_ url: URL) {
+        print("obamamamamamamamamma")
+        if let components = URLComponents(url: url, resolvingAgainstBaseURL: false){
+//               let host = components.host,
+//               host == "QRscan",
+            print("components work")
+            if let pollId = components.path.split(separator: "/").last.map(String.init){
+                // Navigate to the corresponding view using pollId
+                print(pollId)
+                modalPollId = pollId
+            }
+        }
+    }
+    
+    @MainActor
     func createNewPoll() async {
         isLoading = true
         defer { isLoading = false }
